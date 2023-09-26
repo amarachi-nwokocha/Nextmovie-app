@@ -16,14 +16,16 @@ export default function Search() {
     // const response = await fetch(`https://api.themoviedb.org/3/${input}/movie?include_adult=false&language=en-US&page=1`);
     // const movies = await response.json();
     // console.log(movies);
+    
     try {
       const res = await axios.get(
-        `https://api.themoviedb.org/3/${input}/movie?include_adult=false&language=en-US&page=1`,
+        `https://api.themoviedb.org/3/${API_KEY}`,
         {
           headers: {
             Authorization: `Bearer ${API_KEY}`,
           },
-        }
+        },
+        console.log(API_KEY)
       );
       console.log(res.data);
     } catch (error) {
